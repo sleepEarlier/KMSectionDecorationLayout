@@ -26,6 +26,7 @@ static NSArray<NSNumber *> *items;
     
     KMDecorationViewItem *item = [KMDecorationViewItem itemWithClassName:@"DecorationView"];
     KMSectionDecorationLayout *layout = [KMSectionDecorationLayout new];
+//    layout.viewItems = @[item];
     layout.viewItems = @[item, [KMDecorationViewItem emptyItem]];
     layout.adjustHeaderLayout = YES;
     layout.minimumLineSpacing = 6;
