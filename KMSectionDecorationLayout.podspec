@@ -76,7 +76,7 @@ s.ios.deployment_target = "7.0"
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/sleepEarlier/KMSectionDecorationLayout.git",  }
+  s.source       = { :git => "https://github.com/sleepEarlier/KMSectionDecorationLayout.git",   :tag => s.version}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
