@@ -8,10 +8,13 @@
 
 #import "ViewController.h"
 #import "KMSectionDecorationLayout.h"
-@interface ViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
+#import "HeaderView.h"
+
+@interface ViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) UICollectionView *collect;
 @end
 
+static NSArray<NSNumber *> *items;
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -19,24 +22,29 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor redColor];
     
-    //    UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
-    //    KMDecorationViewItem *item =
+    items = @[@(arc4random() % 20),@(arc4random() % 20),@(arc4random() % 20),@(arc4random() % 20),@(arc4random() % 20),@(arc4random() % 20),@(arc4random() % 20),@(arc4random() % 20),@(arc4random() % 20),@(arc4random() % 20),];
+    
     KMDecorationViewItem *item = [KMDecorationViewItem itemWithClassName:@"DecorationView"];
     KMSectionDecorationLayout *layout = [KMSectionDecorationLayout new];
-    layout.viewItems = @[item];
+    layout.viewItems = @[item, [KMDecorationViewItem emptyItem]];
+    layout.adjustHeaderLayout = YES;
     layout.minimumLineSpacing = 6;
     layout.minimumInteritemSpacing = 6.;
     layout.itemSize = CGSizeMake(100, 50);
     layout.sectionInset = UIEdgeInsetsMake(10, 20, 10, 20);
-    layout.decrationEdgeInsets = ^UIEdgeInsets(NSInteger section) {
+    layout.headerReferenceSize = CGSizeMake(200, 50);
+    layout.decorationExtendEdges = ^UIEdgeInsets(NSInteger section) {
         return UIEdgeInsetsMake(2, 3, 2, 3);
     };
+//    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
     self.collect = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
     self.collect.dataSource = self;
     self.collect.delegate = self;
     [self.collect registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    [self.collect registerClass:NSClassFromString(@"HeaderView") forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     self.collect.backgroundColor = [UIColor lightGrayColor];
+    
     [self.view addSubview:self.collect];
 }
 
@@ -45,7 +53,8 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 5;
+    
+    return items[section].integerValue;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -57,8 +66,14 @@
     return cell;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%@--%@",indexPath, NSStringFromCGRect(cell.frame));
+
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        UICollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"header" forIndexPath:indexPath];
+        return header;
+    }
+    return nil;
 }
 
 - (void)didReceiveMemoryWarning {

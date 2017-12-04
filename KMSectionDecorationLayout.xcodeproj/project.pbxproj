@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F65C1FBC1FCCF9730077E194 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F65C1FBB1FCCF9730077E194 /* HeaderView.m */; };
 		F6A5F2F91FCBFE39006F0940 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A5F2F81FCBFE39006F0940 /* AppDelegate.m */; };
 		F6A5F2FC1FCBFE39006F0940 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A5F2FB1FCBFE39006F0940 /* ViewController.m */; };
 		F6A5F2FF1FCBFE3A006F0940 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6A5F2FD1FCBFE3A006F0940 /* Main.storyboard */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F65C1FBA1FCCF9730077E194 /* HeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
+		F65C1FBB1FCCF9730077E194 /* HeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		F6A5F2F41FCBFE39006F0940 /* KMSectionDecorationLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KMSectionDecorationLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6A5F2F71FCBFE39006F0940 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F6A5F2F81FCBFE39006F0940 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -69,6 +72,8 @@
 				F6A5F2F81FCBFE39006F0940 /* AppDelegate.m */,
 				F6A5F2FA1FCBFE39006F0940 /* ViewController.h */,
 				F6A5F2FB1FCBFE39006F0940 /* ViewController.m */,
+				F65C1FBA1FCCF9730077E194 /* HeaderView.h */,
+				F65C1FBB1FCCF9730077E194 /* HeaderView.m */,
 				F6A5F3111FCBFEC1006F0940 /* DecorationView.h */,
 				F6A5F3101FCBFEC1006F0940 /* DecorationView.m */,
 				F6A5F2FD1FCBFE3A006F0940 /* Main.storyboard */,
@@ -161,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6A5F2FC1FCBFE39006F0940 /* ViewController.m in Sources */,
+				F65C1FBC1FCCF9730077E194 /* HeaderView.m in Sources */,
 				F6A5F30F1FCBFE4D006F0940 /* KMSectionDecorationLayout.m in Sources */,
 				F6A5F3121FCBFEC1006F0940 /* DecorationView.m in Sources */,
 				F6A5F3071FCBFE3A006F0940 /* main.m in Sources */,
