@@ -114,16 +114,8 @@
         }];
     }
     
-    
-    
     NSMutableArray *mut_originAttrs = originAttrs.mutableCopy;
-    
-    [self.decorationViewAttrs enumerateObjectsUsingBlock:^(UICollectionViewLayoutAttributes * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (CGRectIntersectsRect(rect, obj.frame)) {
-            [mut_originAttrs addObject:obj];
-        }
-    }];
-    
+    [mut_originAttrs addObjectsFromArray:self.decorationViewAttrs];
     
     return mut_originAttrs.copy;
 }
