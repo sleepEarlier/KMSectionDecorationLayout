@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
   A subclass of flowlayout that create decorationView for each section.
                    DESC
 
-  s.homepage     = "https://github.com/sleepEarlier/KMSectionDecorationLayout"
+  s.homepage     = "https://github.com/sleepEarlier/KMSectionDecorationLayout.git"
   s.screenshots  = "https://github.com/sleepEarlier/KMSectionDecorationLayout/raw/master/screenShot.png", "https://github.com/sleepEarlier/KMSectionDecorationLayout/raw/master/screenShot2.png"
 
 
