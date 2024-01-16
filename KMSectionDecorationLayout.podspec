@@ -52,7 +52,7 @@ s.license      = { :type => "MIT", :file => "LICENSE" }
   #  profile URL.
   #
 
-  s.author             = { "SleepEarlier" => "jky130@qq.com" }
+  s.author             = { "SleepEarlier" => "SleepEarlier@github.com" }
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
